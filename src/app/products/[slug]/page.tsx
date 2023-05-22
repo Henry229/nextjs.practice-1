@@ -6,6 +6,12 @@ type Props = {
   };
 };
 
+export function generateMetadata({ params }: Props) {
+  return {
+    title: `Product Name: ${params.slug}`,
+  };
+}
+
 export default function PantsPage({ params }: Props) {
   if (params.slug === 'nothing') {
     notFound();
