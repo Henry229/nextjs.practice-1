@@ -1,6 +1,8 @@
 import { getProducts } from '@/service/products';
 import Link from 'next/link';
 import MeowArticle from '@/components/MeowArticle';
+import Image from 'next/image';
+import clothesImage from '../../../public/images/clothes.jpg';
 
 // export const revalidate = 3; // 3초마다 새로고침 ISR 페이지로 만듬
 
@@ -13,6 +15,7 @@ export default async function ProductsPage() {
   return (
     <div>
       <h1>제품 소개 페이지!</h1>
+      <Image src={clothesImage} alt='Clothes' />
       <ul>
         {products.map(({ id, name }, index) => (
           <li key={index}>
